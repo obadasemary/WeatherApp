@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TSL-XR-iRs">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ProximaNova-Bold.otf">
+            <string>ProximaNova-Bold</string>
+        </array>
+        <array key="ProximaNova-Semibold.otf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="exy-dj-fIw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TSL-XR-iRs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="TabMenu/TabForecast" selectedImage="TabMenu/TabForecastSelected" id="K05-WP-4c0"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ZKJ-WZ-pfD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KFm-Hu-dt9" kind="relationship" relationship="rootViewController" id="gMs-8J-NBD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ols-Lk-9nq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="158" y="125"/>
+        </scene>
+        <!--Forecast-->
+        <scene sceneID="J0v-WZ-uba">
+            <objects>
+                <tableViewController id="KFm-Hu-dt9" customClass="ForecastController" customModule="WeatherTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="53M-ua-PIh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastCell" rowHeight="100" id="yrD-lr-5pg" customClass="ForecastCell" customModule="WeatherTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yrD-lr-5pg" id="QZU-1x-8jf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7au-yA-a4A">
+                                            <rect key="frame" x="10" y="20" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="VxL-ln-O0a"/>
+                                                <constraint firstAttribute="width" constant="60" id="asQ-P8-a1F"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdo-md-rcO">
+                                            <rect key="frame" x="85" y="14.5" width="274" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="OH3-Mr-KYW"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CP-mN-bV1">
+                                            <rect key="frame" x="85" y="39" width="274" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="8vv-A2-ZNP"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
+                                            <color key="textColor" red="0.89411764709999997" green="0.70588235290000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3CP-mN-bV1" firstAttribute="leading" secondItem="7au-yA-a4A" secondAttribute="trailing" constant="15" id="2i8-Oa-Pi5"/>
+                                        <constraint firstItem="pdo-md-rcO" firstAttribute="trailing" secondItem="QZU-1x-8jf" secondAttribute="trailingMargin" id="9Zc-8n-I35"/>
+                                        <constraint firstItem="7au-yA-a4A" firstAttribute="leading" secondItem="QZU-1x-8jf" secondAttribute="leading" constant="10" id="APe-pz-ERp"/>
+                                        <constraint firstItem="7au-yA-a4A" firstAttribute="centerY" secondItem="QZU-1x-8jf" secondAttribute="centerY" id="NNd-cC-8AE"/>
+                                        <constraint firstAttribute="trailing" secondItem="3CP-mN-bV1" secondAttribute="trailing" constant="16" id="hUM-Pp-oqk"/>
+                                        <constraint firstItem="pdo-md-rcO" firstAttribute="centerY" secondItem="7au-yA-a4A" secondAttribute="centerY" constant="-25" id="jrj-WE-RT4"/>
+                                        <constraint firstItem="pdo-md-rcO" firstAttribute="leading" secondItem="7au-yA-a4A" secondAttribute="trailing" constant="15" id="ohZ-JO-55E"/>
+                                        <constraint firstItem="3CP-mN-bV1" firstAttribute="top" secondItem="pdo-md-rcO" secondAttribute="bottom" constant="3.5" id="xir-JU-jWw"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageWeather" destination="7au-yA-a4A" id="pGB-Ri-pvq"/>
+                                    <outlet property="labelDay" destination="pdo-md-rcO" id="T2j-Oy-mQ1"/>
+                                    <outlet property="labelDegree" destination="3CP-mN-bV1" id="dbb-C1-tGN"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KFm-Hu-dt9" id="EpH-b3-hQ2"/>
+                            <outlet property="delegate" destination="KFm-Hu-dt9" id="FaB-oc-sK5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Forecast" id="Hnk-Bx-LdR"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NPp-px-aKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="941.60000000000002" y="124.58770614692655"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="TabMenu/TabForecast" width="22" height="22"/>
+        <image name="TabMenu/TabForecastSelected" width="22" height="22"/>
+    </resources>
+</document>

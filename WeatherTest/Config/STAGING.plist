@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Forecast</key>
+	<string>http://api.openweathermap.org/data/2.5/forecast?</string>
+	<key>Current</key>
+	<string>http://api.openweathermap.org/data/2.5/weather?</string>
+	<key>ApiKey</key>
+	<string>7c901448985b639465aa1bfdfeefb285</string>
+	<key>AppId</key>
+	<string>1147526636</string>
+</dict>
+</plist>
