@@ -11,6 +11,7 @@ import Rswift
 import ReSwift
 import SwiftyJSON
 import Changeable
+import PullToRefreshKit
 
 class ForecastController: UITableViewController, StoreSubscriber {
 
@@ -60,6 +61,13 @@ class ForecastController: UITableViewController, StoreSubscriber {
             $0.select { (state: Changeable<AppState>) -> Changeable<AppState> in
                 state
             }
+        }
+
+        tableView.configRefreshHeader(container:self) { [weak self] in
+            perform_after(2, closure: {
+                self?.tableView.switchRefreshHeader(to: .normal(.success, 0.5))
+                LocationHelper.updateLocation()
+            })
         }
     }
 
