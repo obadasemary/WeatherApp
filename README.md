@@ -53,6 +53,7 @@ apikey and api path is defiened in Config/DEBUG.plist
 <b>Hierarchy</b>
 
 [WeatherTest]/[Resources]
+
 [WeatherTest]/[Resources]/[Assets.scassets]
 [WeatherTest]/[Resources]/[Fonts]
 [WeatherTest]/[Route]
