@@ -69,10 +69,14 @@ class TodayController: UIViewController, StoreSubscriber {
         let mainImage: String = AppState.getMainRespose(desc: todayList["weather"][0]["main"].stringValue)
         imageWeather.image = UIImage(named: "Forecast/\(mainImage)")
         labelLocation.text = todayList["name"].stringValue
-        labelDescription.text = todayList["weather"][0]["description"].stringValue
+
+        let degree = "\("\(self.fahrenheit(celsius: todayList["main"]["humidity"].floatValue))".intValue)"
+        let desc = todayList["weather"][0]["description"].stringValue
+        labelDescription.text = "\(degree)\("°C") | \(desc)"
+
         labelHumidity.text = todayList["main"]["humidity"].stringValue
         labelSpeed.text = todayList["wind"]["speed"].stringValue
-        labelDegree.text = "\("\(self.fahrenheit(celsius: todayList["main"]["humidity"].floatValue))".intValue)"
+        labelDegree.text = degree
     }
 
     func fahrenheit(celsius: Float) -> Float {
