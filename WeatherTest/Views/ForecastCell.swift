@@ -23,6 +23,21 @@ class ForecastCell: UITableViewCell {
             let mainImage: String = AppState.getMainRespose(desc: data["weather"][0]["main"].stringValue)
             imageWeather.image = UIImage(named: "Forecast/\(mainImage)")
             labelDegree.text = data["weather"][0]["main"].stringValue
+
+            let dayFormatter = DateFormatter()
+            dayFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+            let yourDate = dayFormatter.date(from: data["dt_txt"].stringValue)
+            dayFormatter.dateFormat = "EEEE"
+
+            let dayName = dayFormatter.string(from: yourDate!)
+
+            let hourFormatter = DateFormatter()
+            hourFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            hourFormatter.dateFormat = "HH:mm"
+
+            let hourName = hourFormatter.string(from: yourDate!)
+            labelDay.text = "\(dayName) \(hourName)"
         }
     }
 }
