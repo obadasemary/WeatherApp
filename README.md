@@ -52,6 +52,7 @@ apikey and api path is defiened in Config/DEBUG.plist
 
 <b>Hierarchy</b>
 
+<pre>
 [WeatherTest]/[Resources]
 [WeatherTest]/[Resources]/[Assets.scassets]
 [WeatherTest]/[Resources]/[Fonts]
@@ -72,5 +73,6 @@ apikey and api path is defiened in Config/DEBUG.plist
 [WeatherTest]/[Views]/[MainTab.storyboard]
 [WeatherTest]/[Views]/[Today.storyboard]
 [WeatherTest]/[Views]/[Forecast.storyboard]
+</pre>
 
 <img src="https://raw.githubusercontent.com/serdarbakirtas/WeatherApp/master/Screenshots/01.png" alt="HTML5 Icon" width="276" height="598"> <img src="https://raw.githubusercontent.com/serdarbakirtas/WeatherApp/master/Screenshots/02.png" alt="HTML5 Icon" width="276" height="598"> <img src="https://raw.githubusercontent.com/serdarbakirtas/WeatherApp/master/Screenshots/03.png" alt="HTML5 Icon" width="276" height="598">
