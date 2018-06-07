@@ -49,5 +49,5 @@ used forecast endpoint for search with (firebase)
 used weather endpoint for search with (firebase)
 
 
-<img src="http://prntscr.com/js5dfg" alt="HTML5 Icon" width="375" height="667">
+<img src="https://raw.githubusercontent.com/serdarbakirtas/WeatherApp/master/Screenshots/01.png" alt="HTML5 Icon" width="375" height="667">
 <img src="http://prntscr.com/js5dfg" alt="HTML5 Icon" width="375" height="667">
