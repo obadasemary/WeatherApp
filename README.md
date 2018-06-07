@@ -51,3 +51,4 @@ used weather endpoint for search with (firebase)
 
 <img src="https://raw.githubusercontent.com/serdarbakirtas/WeatherApp/master/Screenshots/01.png" alt="HTML5 Icon" width="276" height="598">
 <img src="https://raw.githubusercontent.com/serdarbakirtas/WeatherApp/master/Screenshots/02.png" alt="HTML5 Icon" width="276" height="598">
+<img src="https://raw.githubusercontent.com/serdarbakirtas/WeatherApp/master/Screenshots/03.png" alt="HTML5 Icon" width="276" height="598">
