@@ -48,5 +48,29 @@ SwiftHamcrest
 used forecast endpoint for search with (firebase)
 used weather endpoint for search with (firebase)
 
+apikey and api path is defiened in Config/DEBUG.plist
+
+<b>Hierarchy</b>
+
+[WeatherTest]/[Resources]
+[WeatherTest]/[Resources]/[Assets.scassets]
+[WeatherTest]/[Resources]/[Fonts]
+[WeatherTest]/[Route]
+[WeatherTest]/[Redux]
+[WeatherTest]/[Redux]/[Actor]
+[WeatherTest]/[Redux]/[Action]
+[WeatherTest]/[Redux]/[Reducer]
+[WeatherTest]/[Redux]/[State]
+[WeatherTest]/[Utils]
+[WeatherTest]/[Service]
+[WeatherTest]/[Config]
+[WeatherTest]/[Config]/[DEBUG.plist]
+[WeatherTest]/[Config]/[RELEASE.plist]
+[WeatherTest]/[Config]/[STAGING.plist]
+[WeatherTest]/[Controller]
+[WeatherTest]/[Views]
+[WeatherTest]/[Views]/[MainTab.storyboard]
+[WeatherTest]/[Views]/[Today.storyboard]
+[WeatherTest]/[Views]/[Forecast.storyboard]
 
 <img src="https://raw.githubusercontent.com/serdarbakirtas/WeatherApp/master/Screenshots/01.png" alt="HTML5 Icon" width="276" height="598"> <img src="https://raw.githubusercontent.com/serdarbakirtas/WeatherApp/master/Screenshots/02.png" alt="HTML5 Icon" width="276" height="598"> <img src="https://raw.githubusercontent.com/serdarbakirtas/WeatherApp/master/Screenshots/03.png" alt="HTML5 Icon" width="276" height="598">
