@@ -245,8 +245,8 @@ struct R: Rswift.Validatable {
     static let forecast = _R.storyboard.forecast()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `MainTabController`.
-    static let mainTabController = _R.storyboard.mainTabController()
+    /// Storyboard `MainTab`.
+    static let mainTab = _R.storyboard.mainTab()
     /// Storyboard `Today`.
     static let today = _R.storyboard.today()
     
@@ -260,9 +260,9 @@ struct R: Rswift.Validatable {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
     }
     
-    /// `UIStoryboard(name: "MainTabController", bundle: ...)`
-    static func mainTabController(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.mainTabController)
+    /// `UIStoryboard(name: "MainTab", bundle: ...)`
+    static func mainTab(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.mainTab)
     }
     
     /// `UIStoryboard(name: "Today", bundle: ...)`
@@ -302,9 +302,9 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      try mainTab.validate()
       try today.validate()
       try forecast.validate()
-      try mainTabController.validate()
     }
     
     struct forecast: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -330,19 +330,19 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct mainTabController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+    struct mainTab: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = MainTabController
       
       let bundle = R.hostingBundle
       let mainTabController = StoryboardViewControllerResource<MainTabController>(identifier: "MainTabController")
-      let name = "MainTabController"
+      let name = "MainTab"
       
       func mainTabController(_: Void = ()) -> MainTabController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainTabController)
       }
       
       static func validate() throws {
-        if _R.storyboard.mainTabController().mainTabController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainTabController' could not be loaded from storyboard 'MainTabController' as 'MainTabController'.") }
+        if _R.storyboard.mainTab().mainTabController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainTabController' could not be loaded from storyboard 'MainTab' as 'MainTabController'.") }
       }
       
       fileprivate init() {}

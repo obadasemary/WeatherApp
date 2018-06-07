@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, StoreSubscriber {
         FirebaseApp.configure()
         database = Database.database().reference()
 
-        window?.rootViewController = R.storyboard.mainTabController().instantiateInitialViewController()
+        window?.rootViewController = R.storyboard.mainTab().instantiateInitialViewController()
 
         return true
     }
