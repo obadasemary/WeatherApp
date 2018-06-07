@@ -22,6 +22,9 @@ class TodayController: UIViewController, StoreSubscriber {
     @IBOutlet var imageWeather: UIImageView!
     @IBOutlet var labelLocation: UILabel!
     @IBOutlet var labelDescription: UILabel!
+    @IBOutlet var labelHumidity: UILabel!
+    @IBOutlet var labelDegree: UILabel!
+    @IBOutlet var labelSpeed: UILabel!
 
     var isFirstLaunch = true
 
@@ -53,6 +56,7 @@ class TodayController: UIViewController, StoreSubscriber {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.shadowImage = R.image.forecast.lineRainbow()
 
         Redux.store.subscribe(self) {
             $0.select { (state: Changeable<AppState>) -> Changeable<AppState> in
@@ -66,6 +70,13 @@ class TodayController: UIViewController, StoreSubscriber {
         imageWeather.image = UIImage(named: "Forecast/\(mainImage)")
         labelLocation.text = todayList["name"].stringValue
         labelDescription.text = todayList["weather"][0]["description"].stringValue
+        labelHumidity.text = todayList["main"]["humidity"].stringValue
+        labelSpeed.text = todayList["wind"]["speed"].stringValue
+        labelDegree.text = "\("\(self.fahrenheit(celsius: todayList["main"]["humidity"].floatValue))".intValue)"
+    }
+
+    func fahrenheit(celsius: Float) -> Float {
+        return (celsius - 32) * 0.5556
     }
 
     @IBAction func shareButtonTapped(_ sender: Any) {

@@ -14,6 +14,7 @@ class ForecastCell: UITableViewCell {
     @IBOutlet var imageWeather: UIImageView!
     @IBOutlet var labelDay: UILabel!
     @IBOutlet var labelDegree: UILabel!
+    @IBOutlet var labelWeather: UILabel!
 
     var data: JSON = [] {
         didSet {
@@ -22,7 +23,7 @@ class ForecastCell: UITableViewCell {
 
             let mainImage: String = AppState.getMainRespose(desc: data["weather"][0]["main"].stringValue)
             imageWeather.image = UIImage(named: "Forecast/\(mainImage)")
-            labelDegree.text = data["weather"][0]["main"].stringValue
+            labelWeather.text = data["weather"][0]["main"].stringValue
 
             let dayFormatter = DateFormatter()
             dayFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -38,7 +39,15 @@ class ForecastCell: UITableViewCell {
 
             let hourName = hourFormatter.string(from: yourDate!)
             labelDay.text = "\(dayName) \(hourName)"
+
+            let celsius = self.fahrenheit(celsius: data["main"]["humidity"].floatValue)
+            let celciusValue = "\(celsius)".intValue
+            labelDegree.text = "\(celciusValue) \("°C")"
         }
+    }
+
+    func fahrenheit(celsius: Float) -> Float {
+        return (celsius - 32) * 0.5556
     }
 }
 

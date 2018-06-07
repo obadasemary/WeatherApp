@@ -72,7 +72,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CP-mN-bV1">
-                                            <rect key="frame" x="85" y="39" width="274" height="50"/>
+                                            <rect key="frame" x="85" y="39" width="49" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="8vv-A2-ZNP"/>
                                             </constraints>
@@ -80,12 +80,20 @@
                                             <color key="textColor" red="0.89411764709999997" green="0.70588235290000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7x-Db-O2i">
+                                            <rect key="frame" x="346" y="10" width="19" height="79.5"/>
+                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="3CP-mN-bV1" firstAttribute="leading" secondItem="7au-yA-a4A" secondAttribute="trailing" constant="15" id="2i8-Oa-Pi5"/>
+                                        <constraint firstItem="m7x-Db-O2i" firstAttribute="top" secondItem="QZU-1x-8jf" secondAttribute="top" constant="10" id="4gs-4X-eRt"/>
                                         <constraint firstItem="7au-yA-a4A" firstAttribute="leading" secondItem="QZU-1x-8jf" secondAttribute="leading" constant="10" id="APe-pz-ERp"/>
                                         <constraint firstItem="7au-yA-a4A" firstAttribute="centerY" secondItem="QZU-1x-8jf" secondAttribute="centerY" id="NNd-cC-8AE"/>
-                                        <constraint firstAttribute="trailing" secondItem="3CP-mN-bV1" secondAttribute="trailing" constant="16" id="hUM-Pp-oqk"/>
+                                        <constraint firstAttribute="trailing" secondItem="m7x-Db-O2i" secondAttribute="trailing" constant="10" id="RO0-Q4-9Fa"/>
+                                        <constraint firstAttribute="bottom" secondItem="m7x-Db-O2i" secondAttribute="bottom" constant="10" id="WxD-bP-swH"/>
                                         <constraint firstItem="pdo-md-rcO" firstAttribute="centerY" secondItem="7au-yA-a4A" secondAttribute="centerY" constant="-25" id="jrj-WE-RT4"/>
                                         <constraint firstItem="pdo-md-rcO" firstAttribute="leading" secondItem="7au-yA-a4A" secondAttribute="trailing" constant="15" id="ohZ-JO-55E"/>
                                         <constraint firstItem="3CP-mN-bV1" firstAttribute="top" secondItem="pdo-md-rcO" secondAttribute="bottom" constant="3.5" id="xir-JU-jWw"/>
@@ -94,7 +102,8 @@
                                 <connections>
                                     <outlet property="imageWeather" destination="7au-yA-a4A" id="pGB-Ri-pvq"/>
                                     <outlet property="labelDay" destination="pdo-md-rcO" id="T2j-Oy-mQ1"/>
-                                    <outlet property="labelDegree" destination="3CP-mN-bV1" id="dbb-C1-tGN"/>
+                                    <outlet property="labelDegree" destination="m7x-Db-O2i" id="Mb1-wo-yBc"/>
+                                    <outlet property="labelWeather" destination="3CP-mN-bV1" id="cQo-N3-avD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

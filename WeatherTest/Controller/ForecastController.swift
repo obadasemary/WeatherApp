@@ -56,6 +56,7 @@ class ForecastController: UITableViewController, StoreSubscriber {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.shadowImage = R.image.forecast.lineRainbow()
 
         Redux.store.subscribe(self) {
             $0.select { (state: Changeable<AppState>) -> Changeable<AppState> in
@@ -63,7 +64,7 @@ class ForecastController: UITableViewController, StoreSubscriber {
             }
         }
 
-        tableView.configRefreshHeader(container:self) { [weak self] in
+        tableView.configRefreshHeader(container: self) { [weak self] in
             perform_after(2, closure: {
                 self?.tableView.switchRefreshHeader(to: .normal(.success, 0.5))
                 LocationHelper.updateLocation()
