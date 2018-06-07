@@ -19,11 +19,11 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Today-->
         <scene sceneID="Mbf-DW-t2g">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Bb-lP-4Zc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="TabMenu/TabToday" selectedImage="TabMenu/TabTodaySelected" id="5gs-Qg-n9S"/>
+                    <tabBarItem key="tabBarItem" title="Today" image="TabMenu/TabToday" selectedImage="TabMenu/TabTodaySelected" id="5gs-Qg-n9S"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="TS1-0e-wzU">

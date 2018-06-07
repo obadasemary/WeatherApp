@@ -17,11 +17,11 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Forecast-->
         <scene sceneID="exy-dj-fIw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TSL-XR-iRs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="TabMenu/TabForecast" selectedImage="TabMenu/TabForecastSelected" id="K05-WP-4c0"/>
+                    <tabBarItem key="tabBarItem" title="Forecast" image="TabMenu/TabForecast" selectedImage="TabMenu/TabForecastSelected" id="K05-WP-4c0"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ZKJ-WZ-pfD">
