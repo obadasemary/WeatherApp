@@ -18,9 +18,6 @@ class ForecastCell: UITableViewCell {
 
     var data: JSON = [] {
         didSet {
-
-            labelDay.text = data["dt_txt"].stringValue
-
             let mainImage: String = AppState.getMainRespose(desc: data["weather"][0]["main"].stringValue)
             imageWeather.image = UIImage(named: "Forecast/\(mainImage)")
             labelWeather.text = data["weather"][0]["main"].stringValue
@@ -29,16 +26,11 @@ class ForecastCell: UITableViewCell {
             dayFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
             let yourDate = dayFormatter.date(from: data["dt_txt"].stringValue)
-            dayFormatter.dateFormat = "EEEE"
-
-            let dayName = dayFormatter.string(from: yourDate!)
-
             let hourFormatter = DateFormatter()
-            hourFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             hourFormatter.dateFormat = "HH:mm"
 
             let hourName = hourFormatter.string(from: yourDate!)
-            labelDay.text = "\(dayName) \(hourName)"
+            labelDay.text = hourName
 
             let celsius = self.fahrenheit(celsius: data["main"]["humidity"].floatValue)
             let celciusValue = "\(celsius)".intValue

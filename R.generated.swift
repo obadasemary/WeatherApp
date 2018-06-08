@@ -13,6 +13,7 @@ struct R: Rswift.Validatable {
   fileprivate static let hostingBundle = Bundle(for: R.Class.self)
   
   static func validate() throws {
+    try font.validate()
     try intern.validate()
   }
   
@@ -21,12 +22,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.file` struct is generated, and contains static references to 4 files.
+  /// This `R.file` struct is generated, and contains static references to 8 files.
   struct file {
     /// Resource file `DEBUG.plist`.
     static let debugPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "DEBUG", pathExtension: "plist")
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
+    /// Resource file `ProximaNova-Bold.otf`.
+    static let proximaNovaBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "ProximaNova-Bold", pathExtension: "otf")
+    /// Resource file `ProximaNova-Light.otf`.
+    static let proximaNovaLightOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "ProximaNova-Light", pathExtension: "otf")
+    /// Resource file `ProximaNova-Regular.otf`.
+    static let proximaNovaRegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "ProximaNova-Regular", pathExtension: "otf")
+    /// Resource file `ProximaNova-Semibold.otf`.
+    static let proximaNovaSemiboldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "ProximaNova-Semibold", pathExtension: "otf")
     /// Resource file `RELEASE.plist`.
     static let releasePlist = Rswift.FileResource(bundle: R.hostingBundle, name: "RELEASE", pathExtension: "plist")
     /// Resource file `STAGING.plist`.
@@ -41,6 +50,30 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.googleServiceInfoPlist
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "ProximaNova-Bold", withExtension: "otf")`
+    static func proximaNovaBoldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.proximaNovaBoldOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "ProximaNova-Light", withExtension: "otf")`
+    static func proximaNovaLightOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.proximaNovaLightOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "ProximaNova-Regular", withExtension: "otf")`
+    static func proximaNovaRegularOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.proximaNovaRegularOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "ProximaNova-Semibold", withExtension: "otf")`
+    static func proximaNovaSemiboldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.proximaNovaSemiboldOtf
       return fileResource.bundle.url(forResource: fileResource)
     }
     
@@ -59,8 +92,44 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.font` struct is generated, and contains static references to 0 fonts.
-  struct font {
+  /// This `R.font` struct is generated, and contains static references to 4 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `ProximaNova-Bold`.
+    static let proximaNovaBold = Rswift.FontResource(fontName: "ProximaNova-Bold")
+    /// Font `ProximaNova-Light`.
+    static let proximaNovaLight = Rswift.FontResource(fontName: "ProximaNova-Light")
+    /// Font `ProximaNova-Regular`.
+    static let proximaNovaRegular = Rswift.FontResource(fontName: "ProximaNova-Regular")
+    /// Font `ProximaNova-Semibold`.
+    static let proximaNovaSemibold = Rswift.FontResource(fontName: "ProximaNova-Semibold")
+    
+    /// `UIFont(name: "ProximaNova-Bold", size: ...)`
+    static func proximaNovaBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: proximaNovaBold, size: size)
+    }
+    
+    /// `UIFont(name: "ProximaNova-Light", size: ...)`
+    static func proximaNovaLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: proximaNovaLight, size: size)
+    }
+    
+    /// `UIFont(name: "ProximaNova-Regular", size: ...)`
+    static func proximaNovaRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: proximaNovaRegular, size: size)
+    }
+    
+    /// `UIFont(name: "ProximaNova-Semibold", size: ...)`
+    static func proximaNovaSemibold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: proximaNovaSemibold, size: size)
+    }
+    
+    static func validate() throws {
+      if R.font.proximaNovaSemibold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ProximaNova-Semibold' could not be loaded, is 'ProximaNova-Semibold.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.proximaNovaBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ProximaNova-Bold' could not be loaded, is 'ProximaNova-Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.proximaNovaLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ProximaNova-Light' could not be loaded, is 'ProximaNova-Light.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.proximaNovaRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'ProximaNova-Regular' could not be loaded, is 'ProximaNova-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
+    }
+    
     fileprivate init() {}
   }
   
@@ -226,10 +295,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `ForecastCell`.
     static let forecastCell: Rswift.ReuseIdentifier<ForecastCell> = Rswift.ReuseIdentifier(identifier: "ForecastCell")
+    /// Reuse identifier `ForecastHeaderCell`.
+    static let forecastHeaderCell: Rswift.ReuseIdentifier<ForecastHeaderCell> = Rswift.ReuseIdentifier(identifier: "ForecastHeaderCell")
     
     fileprivate init() {}
   }

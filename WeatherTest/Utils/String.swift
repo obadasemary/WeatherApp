@@ -28,6 +28,32 @@ public extension StringProtocol where Index == String.Index {
 
 public extension String {
 
+    func dayOfWeek(s: String) -> String {
+
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+        let yourDate = dayFormatter.date(from: s)
+
+        dayFormatter.dateFormat = "EEEE"
+        let dayName = dayFormatter.string(from: yourDate!)
+        
+        return dayName.uppercased()
+    }
+
+    func dayOfItems(s: String) -> String {
+
+        let fiterFormatter = DateFormatter()
+        fiterFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+        let filterDate = fiterFormatter.date(from: s)
+        fiterFormatter.dateFormat = "EEEE"
+
+        let filterName = fiterFormatter.string(from: filterDate!)
+
+        return filterName
+    }
+
     /// SwifterSwift: String decoded from base64 (if applicable).
     ///
     ///        "SGVsbG8gV29ybGQh".base64Decoded = Optional("Hello World!")

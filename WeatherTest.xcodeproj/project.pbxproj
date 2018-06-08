@@ -48,6 +48,11 @@
 		058BAF3220C96E6C008C63C9 /* TrapReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058BAF3120C96E6C008C63C9 /* TrapReducer.swift */; };
 		058BAF3520C96F3F008C63C9 /* forecastWithFailure.json in Resources */ = {isa = PBXBuildFile; fileRef = 058BAF3320C96F3F008C63C9 /* forecastWithFailure.json */; };
 		058BAF3620C96F3F008C63C9 /* weatherWithFailure.json in Resources */ = {isa = PBXBuildFile; fileRef = 058BAF3420C96F3F008C63C9 /* weatherWithFailure.json */; };
+		05BA02F020C9F2DA00BCEDDA /* ForecastHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA02EF20C9F2DA00BCEDDA /* ForecastHeaderCell.swift */; };
+		05BA02F120CA78A700BCEDDA /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 058BAF1720C8CA8F008C63C9 /* ProximaNova-Bold.otf */; };
+		05BA02F220CA78A700BCEDDA /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 058BAF1920C8CA8F008C63C9 /* ProximaNova-Light.otf */; };
+		05BA02F320CA78A700BCEDDA /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 058BAF1620C8CA8E008C63C9 /* ProximaNova-Regular.otf */; };
+		05BA02F420CA78A700BCEDDA /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 058BAF1820C8CA8F008C63C9 /* ProximaNova-Semibold.otf */; };
 		05D271DD20C875BC004E645C /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D271DA20C875BC004E645C /* AppConfig.swift */; };
 		05D271F520C87E19004E645C /* MoyaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D271F220C87E19004E645C /* MoyaResponse.swift */; };
 		05D271F620C87E19004E645C /* GlobalServiceDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D271F320C87E19004E645C /* GlobalServiceDomain.swift */; };
@@ -131,6 +136,7 @@
 		058BAF3120C96E6C008C63C9 /* TrapReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrapReducer.swift; sourceTree = "<group>"; };
 		058BAF3320C96F3F008C63C9 /* forecastWithFailure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecastWithFailure.json; sourceTree = "<group>"; };
 		058BAF3420C96F3F008C63C9 /* weatherWithFailure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weatherWithFailure.json; sourceTree = "<group>"; };
+		05BA02EF20C9F2DA00BCEDDA /* ForecastHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastHeaderCell.swift; sourceTree = "<group>"; };
 		05D271DA20C875BC004E645C /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		05D271F220C87E19004E645C /* MoyaResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaResponse.swift; sourceTree = "<group>"; };
 		05D271F320C87E19004E645C /* GlobalServiceDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalServiceDomain.swift; sourceTree = "<group>"; };
@@ -302,6 +308,7 @@
 				052C983C20C88BAD001721B6 /* Today.storyboard */,
 				052C983E20C88BD4001721B6 /* Forecast.storyboard */,
 				052C984820C894C1001721B6 /* ForecastCell.swift */,
+				05BA02EF20C9F2DA00BCEDDA /* ForecastHeaderCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -528,6 +535,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05BA02F120CA78A700BCEDDA /* ProximaNova-Bold.otf in Resources */,
+				05BA02F220CA78A700BCEDDA /* ProximaNova-Light.otf in Resources */,
+				05BA02F320CA78A700BCEDDA /* ProximaNova-Regular.otf in Resources */,
+				05BA02F420CA78A700BCEDDA /* ProximaNova-Semibold.otf in Resources */,
 				052C984320C89057001721B6 /* GoogleService-Info.plist in Resources */,
 				05D2720820C8813F004E645C /* RELEASE.plist in Resources */,
 				052C983F20C88BD4001721B6 /* Forecast.storyboard in Resources */,
@@ -705,6 +716,7 @@
 				05D271FB20C87E70004E645C /* SwiftyJSON.swift in Sources */,
 				052C987720C89C99001721B6 /* ForecastService.swift in Sources */,
 				058BAF2120C920D7008C63C9 /* Declarations.swift in Sources */,
+				05BA02F020C9F2DA00BCEDDA /* ForecastHeaderCell.swift in Sources */,
 				058BAF2520C933A4008C63C9 /* LocationAction.swift in Sources */,
 				052C984520C8943A001721B6 /* TodayController.swift in Sources */,
 				05D271F620C87E19004E645C /* GlobalServiceDomain.swift in Sources */,
@@ -891,7 +903,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5WKLJW5KB8;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WeatherTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -911,7 +923,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5WKLJW5KB8;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WeatherTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
