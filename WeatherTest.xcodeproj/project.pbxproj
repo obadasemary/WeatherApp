@@ -15,7 +15,6 @@
 		052C984520C8943A001721B6 /* TodayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C984420C8943A001721B6 /* TodayController.swift */; };
 		052C984720C8945B001721B6 /* ForecastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C984620C8945B001721B6 /* ForecastController.swift */; };
 		052C984920C894C1001721B6 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C984820C894C1001721B6 /* ForecastCell.swift */; };
-		052C984D20C8991A001721B6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C984C20C8991A001721B6 /* Router.swift */; };
 		052C984F20C89A59001721B6 /* ReduxInitialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C984E20C89A59001721B6 /* ReduxInitialize.swift */; };
 		052C986A20C89AA8001721B6 /* ForecastAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C985720C89AA7001721B6 /* ForecastAction.swift */; };
 		052C987120C89AA8001721B6 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C986020C89AA8001721B6 /* AppReducer.swift */; };
@@ -53,6 +52,7 @@
 		05BA02F220CA78A700BCEDDA /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 058BAF1920C8CA8F008C63C9 /* ProximaNova-Light.otf */; };
 		05BA02F320CA78A700BCEDDA /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 058BAF1620C8CA8E008C63C9 /* ProximaNova-Regular.otf */; };
 		05BA02F420CA78A700BCEDDA /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 058BAF1820C8CA8F008C63C9 /* ProximaNova-Semibold.otf */; };
+		05BA02FB20CABC5900BCEDDA /* Float+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA02FA20CABC5900BCEDDA /* Float+.swift */; };
 		05D271DD20C875BC004E645C /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D271DA20C875BC004E645C /* AppConfig.swift */; };
 		05D271F520C87E19004E645C /* MoyaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D271F220C87E19004E645C /* MoyaResponse.swift */; };
 		05D271F620C87E19004E645C /* GlobalServiceDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D271F320C87E19004E645C /* GlobalServiceDomain.swift */; };
@@ -93,7 +93,6 @@
 		052C984420C8943A001721B6 /* TodayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayController.swift; sourceTree = "<group>"; };
 		052C984620C8945B001721B6 /* ForecastController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastController.swift; sourceTree = "<group>"; };
 		052C984820C894C1001721B6 /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
-		052C984C20C8991A001721B6 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		052C984E20C89A59001721B6 /* ReduxInitialize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReduxInitialize.swift; sourceTree = "<group>"; };
 		052C985720C89AA7001721B6 /* ForecastAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastAction.swift; sourceTree = "<group>"; };
 		052C986020C89AA8001721B6 /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
@@ -137,6 +136,7 @@
 		058BAF3320C96F3F008C63C9 /* forecastWithFailure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecastWithFailure.json; sourceTree = "<group>"; };
 		058BAF3420C96F3F008C63C9 /* weatherWithFailure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weatherWithFailure.json; sourceTree = "<group>"; };
 		05BA02EF20C9F2DA00BCEDDA /* ForecastHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastHeaderCell.swift; sourceTree = "<group>"; };
+		05BA02FA20CABC5900BCEDDA /* Float+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+.swift"; sourceTree = "<group>"; };
 		05D271DA20C875BC004E645C /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		05D271F220C87E19004E645C /* MoyaResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaResponse.swift; sourceTree = "<group>"; };
 		05D271F320C87E19004E645C /* GlobalServiceDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalServiceDomain.swift; sourceTree = "<group>"; };
@@ -193,14 +193,6 @@
 				052C984E20C89A59001721B6 /* ReduxInitialize.swift */,
 			);
 			path = Redux;
-			sourceTree = "<group>";
-		};
-		052C984B20C898C1001721B6 /* Route */ = {
-			isa = PBXGroup;
-			children = (
-				052C984C20C8991A001721B6 /* Router.swift */,
-			);
-			path = Route;
 			sourceTree = "<group>";
 		};
 		052C985020C89AA7001721B6 /* Action */ = {
@@ -265,8 +257,8 @@
 		05634CA420C8700100FC3E21 /* WeatherTest */ = {
 			isa = PBXGroup;
 			children = (
+				05BA02F920CABBA700BCEDDA /* Extensions */,
 				058BAF1520C8CA65008C63C9 /* Resources */,
-				052C984B20C898C1001721B6 /* Route */,
 				052C984A20C898BB001721B6 /* Redux */,
 				05D271E220C87840004E645C /* Utils */,
 				05634CD620C8731E00FC3E21 /* Service */,
@@ -369,18 +361,26 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
-		05D271E220C87840004E645C /* Utils */ = {
+		05BA02F920CABBA700BCEDDA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				058BAF2620C95C04008C63C9 /* Dispatch.swift */,
+				05D271F820C87E70004E645C /* SwiftyJSON+ */,
+				05D271F120C87E19004E645C /* Moya+ */,
 				052C988D20C8AD6F001721B6 /* UIViewController+.swift */,
 				052C988B20C8A46E001721B6 /* Data.swift */,
 				052C988920C8A436001721B6 /* String.swift */,
 				052C988720C8A3CA001721B6 /* Dictionary.swift */,
 				052C988120C8A2C5001721B6 /* NSObject.swift */,
+				05BA02FA20CABC5900BCEDDA /* Float+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		05D271E220C87840004E645C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				058BAF2620C95C04008C63C9 /* Dispatch.swift */,
 				052C987F20C8A0B6001721B6 /* Vendors.swift */,
-				05D271F820C87E70004E645C /* SwiftyJSON+ */,
-				05D271F120C87E19004E645C /* Moya+ */,
 				058BAF2220C92E8D008C63C9 /* LocationHelper.swift */,
 			);
 			path = Utils;
@@ -700,6 +700,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05BA02FB20CABC5900BCEDDA /* Float+.swift in Sources */,
 				05D271F520C87E19004E645C /* MoyaResponse.swift in Sources */,
 				058BAF2720C95C04008C63C9 /* Dispatch.swift in Sources */,
 				05D271F720C87E19004E645C /* ServiceProvider.swift in Sources */,
@@ -734,7 +735,6 @@
 				052C987920C89D71001721B6 /* ServerResponse.swift in Sources */,
 				052C987B20C89E12001721B6 /* ServiceInitialize.swift in Sources */,
 				052C987220C89AA8001721B6 /* AppState.swift in Sources */,
-				052C984D20C8991A001721B6 /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

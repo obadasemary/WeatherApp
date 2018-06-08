@@ -30,14 +30,34 @@ class TodayController: UIViewController, StoreSubscriber {
     
     var isFirstLaunch = true
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.shadowImage = R.image.forecast.lineRainbow()
+
+        // We should subscribe for state
+        Redux.store.subscribe(self) {
+            $0.select { (state: Changeable<AppState>) -> Changeable<AppState> in
+                state
+            }
+        }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        LocationHelper.updateLocation()
+    }
+
+    // MARK: - Redux State
     func newState(state: Changeable<AppState>) {
         value = state.value
 
+        // Using Weather Data
         if state.lastChanges.contains(\AppState.todayList) {
             todayList = state.value.todayList
             setStackView()
         }
 
+        // Showing location latidute and langitude
         if state.lastChanges.contains(\AppState.locationCount) || isFirstLaunch {
             if state.value.locationCount != [] {
                 let latidute: Double = state.value.locationCount[0].doubleValue
@@ -51,28 +71,13 @@ class TodayController: UIViewController, StoreSubscriber {
         isFirstLaunch = false
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        LocationHelper.updateLocation()
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationController?.navigationBar.shadowImage = R.image.forecast.lineRainbow()
-
-        Redux.store.subscribe(self) {
-            $0.select { (state: Changeable<AppState>) -> Changeable<AppState> in
-                state
-            }
-        }
-    }
-
+    // MARK: - StackView
     func setStackView() {
         let mainImage: String = AppState.getMainRespose(desc: todayList["weather"][0]["main"].stringValue)
         imageWeather.image = UIImage(named: "Forecast/\(mainImage)")
         labelLocation.text = todayList["name"].stringValue
 
-        let degree = "\("\(self.fahrenheit(celsius: todayList["main"]["humidity"].floatValue))".intValue)"
+        let degree = "\("\(todayList["main"]["humidity"].floatValue.fahrenheit())".intValue)"
         let desc = todayList["weather"][0]["description"].stringValue
         labelDescription.text = "\(degree)\("°C") | \(desc)"
 
@@ -80,18 +85,8 @@ class TodayController: UIViewController, StoreSubscriber {
         labelSpeed.text = "\(todayList["wind"]["speed"].intValue) \("km\\h")"
         labelDegree.text = "\(todayList["main"]["pressure"].intValue) \("hPa")"
 
-        labelDirection.text = windDirectionFromDegrees(degrees: todayList["wind"]["deg"].floatValue)
+        labelDirection.text = todayList["wind"]["deg"].floatValue.windDirectionFromDegrees()
         labelNem.text = "\(todayList["clouds"]["all"].intValue) \("mm")"
-    }
-
-    func windDirectionFromDegrees(degrees : Float) -> String {
-        let directions = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]
-        let i: Int = Int((degrees + 11.25)/22.5)
-        return directions[i % 16]
-    }
-
-    func fahrenheit(celsius: Float) -> Float {
-        return (celsius - 32) * 0.5556
     }
 
     @IBAction func shareButtonTapped(_ sender: Any) {

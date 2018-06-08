@@ -13,9 +13,12 @@ import ReSwift
 import SwiftyJSON
 
 extension AppState {
+
+    // MARK: - Forecast Data
     public static func getForecast(lat: Double, long: Double) -> Store<Changeable<AppState>>.AsyncActionCreator {
         return { _, _, callback in
 
+            /// Getting Forecast Data - Please check Config/.plist
             forecastProvider.request(ForecastService.getForecast(latitude: lat, longitude: long), completion: { result in
                 switch result {
                 case let .success(response):

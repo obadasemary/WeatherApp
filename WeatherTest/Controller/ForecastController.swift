@@ -25,60 +25,6 @@ class ForecastController: UITableViewController, StoreSubscriber {
 
     var isFirstLaunch = true
 
-    func newState(state: Changeable<AppState>) {
-        value = state.value
-
-        if state.lastChanges.contains(\AppState.todayList)  || isFirstLaunch {
-            title = state.value.todayList["name"].stringValue
-        }
-
-        if state.lastChanges.contains(\AppState.forecastList) {
-            items = state.value.forecastList
-
-            var saveDay: String = ""
-
-            for i in 0 ... items.count - 1 {
-                var dayName: String = ""
-                dayName = dayName.dayOfWeek(s: items[i]["dt_txt"].stringValue)
-                if dayName != saveDay {
-                    dayTitleItems.append(JSON(items[i]))
-                }
-                saveDay = dayName
-            }
-
-            for j in 0 ... dayTitleItems.count - 1 {
-                var dayName = ""
-                dayName = dayName.dayOfItems(s: dayTitleItems[j]["dt_txt"].stringValue)
-                dayGroupItem.removeAll()
-
-                for k in 0 ... items.count - 1 {
-                    let filterName: String = ""
-                    if filterName.dayOfItems(s: items[k]["dt_txt"].stringValue) == dayName {
-                        dayGroupItem.append(JSON(items[k]))
-                    }
-                }
-
-                dayGroupItems.append(JSON(dayGroupItem))
-            }
-
-            tableView.reloadData()
-        }
-
-
-        if state.lastChanges.contains(\AppState.locationCount) || isFirstLaunch {
-
-            if state.value.locationCount != [] {
-                let latidute: Double = state.value.locationCount[0].doubleValue
-                let langitude: Double = state.value.locationCount[1].doubleValue
-                Redux.store.dispatch(AppState.getForecast(lat: latidute, long: langitude))
-            } else {
-                self.showMessage("Error!", "Unable to Share Location", 0)
-            }
-        }
-
-        isFirstLaunch = false
-    }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         LocationHelper.updateLocation()
@@ -94,6 +40,7 @@ class ForecastController: UITableViewController, StoreSubscriber {
             }
         }
 
+        /// Refreshing Forecast Data
         tableView.configRefreshHeader(container: self) { [weak self] in
             perform_after(2, closure: {
                 self?.tableView.switchRefreshHeader(to: .normal(.success, 0.5))
@@ -102,10 +49,68 @@ class ForecastController: UITableViewController, StoreSubscriber {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    // MARK: - REDUX STATE
+    func newState(state: Changeable<AppState>) {
+        value = state.value
+
+        /// Using City Name for Title
+        if state.lastChanges.contains(\AppState.todayList) || isFirstLaunch {
+            title = state.value.todayList["name"].stringValue
+        }
+
+        /// Using Forecast data
+        if state.lastChanges.contains(\AppState.forecastList) {
+            items = state.value.forecastList
+
+            var saveDay: String = ""
+
+            for i in 0 ... items.count - 1 {
+                let dayName = items[i]["dt_txt"].stringValue.dayOfWeek()
+                if dayName != saveDay {
+                    dayTitleItems.append(JSON(items[i]))
+                }
+                saveDay = dayName
+            }
+            reloadUpdatedData()
+        }
+
+        /// Using Location latidute & langitude
+        if state.lastChanges.contains(\AppState.locationCount) || isFirstLaunch {
+
+            if state.value.locationCount != [] {
+                let latidute: Double = state.value.locationCount[0].doubleValue
+                let langitude: Double = state.value.locationCount[1].doubleValue
+                Redux.store.dispatch(AppState.getForecast(lat: latidute, long: langitude))
+            } else {
+                self.showMessage("Error!", "Unable to Share Location", 0)
+            }
+        }
+
+        isFirstLaunch = false
     }
 
+    // MARK: - Filter
+    func reloadUpdatedData() {
+        /// Group array are filtered
+        ///
+        /// - Days are created
+        /// - Sections are created
+
+        for j in 0 ... dayTitleItems.count - 1 {
+            let dayName = dayTitleItems[j]["dt_txt"].stringValue.dayOfItems()
+            dayGroupItem.removeAll()
+
+            for k in 0 ... items.count - 1 {
+                if items[k]["dt_txt"].stringValue.dayOfItems() == dayName {
+                    dayGroupItem.append(JSON(items[k]))
+                }
+            }
+            dayGroupItems.append(JSON(dayGroupItem))
+        }
+        tableView.reloadData()
+    }
+
+    // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return dayGroupItems.count - 1
     }
@@ -124,14 +129,18 @@ class ForecastController: UITableViewController, StoreSubscriber {
         return 100
     }
 
+    // MARK: - Header Section
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.forecastHeaderCell.identifier) as! ForecastHeaderCell
-        let title: String = ""
-        headerCell.labelDays.text = title.dayOfWeek(s: dayGroupItems[section][section]["dt_txt"].stringValue)
+        headerCell.labelDays.text = dayGroupItems[section][section]["dt_txt"].stringValue.dayOfWeek()
         return headerCell
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 }

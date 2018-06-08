@@ -22,17 +22,12 @@ class ForecastCell: UITableViewCell {
             imageWeather.image = UIImage(named: "Forecast/\(mainImage)")
             labelWeather.text = data["weather"][0]["main"].stringValue
 
-            let title: String = ""
-            labelDay.text = title.hourOfDay(s: data["dt_txt"].stringValue)
+            labelDay.text = data["dt_txt"].stringValue.hourOfDay()
 
-            let celsius = self.fahrenheit(celsius: data["main"]["humidity"].floatValue)
+            let celsius = data["main"]["humidity"].floatValue.fahrenheit()
             let celciusValue = "\(celsius)".intValue
             labelDegree.text = "\(celciusValue)\("°")"
         }
-    }
-
-    func fahrenheit(celsius: Float) -> Float {
-        return (celsius - 32) * 0.5556
     }
 }
 

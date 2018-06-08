@@ -28,12 +28,12 @@ public extension StringProtocol where Index == String.Index {
 
 public extension String {
 
-    func dayOfWeek(s: String) -> String {
+    func dayOfWeek() -> String {
 
         let dayFormatter = DateFormatter()
         dayFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
-        let yourDate = dayFormatter.date(from: s)
+        let yourDate = dayFormatter.date(from: self)
 
         dayFormatter.dateFormat = "EEEE"
         let dayName = dayFormatter.string(from: yourDate!)
@@ -41,12 +41,12 @@ public extension String {
         return dayName.uppercased()
     }
 
-    func dayOfItems(s: String) -> String {
+    func dayOfItems() -> String {
 
         let fiterFormatter = DateFormatter()
         fiterFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
-        let filterDate = fiterFormatter.date(from: s)
+        let filterDate = fiterFormatter.date(from: self)
         fiterFormatter.dateFormat = "EEEE"
 
         let filterName = fiterFormatter.string(from: filterDate!)
@@ -54,12 +54,12 @@ public extension String {
         return filterName
     }
 
-    func hourOfDay(s: String) -> String {
+    func hourOfDay() -> String {
 
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
-        let filterDate = dateFormatter.date(from: s)
+        let filterDate = dateFormatter.date(from: self)
         dateFormatter.dateFormat = "HH:mm"
 
         let filterName = dateFormatter.string(from: filterDate!)

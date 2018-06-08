@@ -13,9 +13,12 @@ import ReSwift
 import SwiftyJSON
 
 extension AppState {
+
+    // MARK: - Weather Data
     public static func getToday(lat: Double, long: Double) -> Store<Changeable<AppState>>.AsyncActionCreator {
         return { _, _, callback in
 
+            /// Getting Weather Data - Please check Config/.plist
             todayProvider.request(TodayService.getToday(latitude: lat, longitude: long), completion: { result in
                 switch result {
                 case let .success(response):
