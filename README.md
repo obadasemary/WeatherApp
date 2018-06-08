@@ -53,10 +53,10 @@ apikey and api path is defiened in Config/DEBUG.plist
 <b>Hierarchy</b>
 
 <pre>
+[WeatherTest]/[Extensions]
 [WeatherTest]/[Resources]
 [WeatherTest]/[Resources]/[Assets.scassets]
 [WeatherTest]/[Resources]/[Fonts]
-[WeatherTest]/[Route]
 [WeatherTest]/[Redux]
 [WeatherTest]/[Redux]/[Actor]
 [WeatherTest]/[Redux]/[Action]
