@@ -51,14 +51,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ftf-Wq-0KI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="At9-fU-MU8" userLabel="Main Section Stack View">
-                                        <rect key="frame" x="85" y="32" width="205.5" height="145"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="At9-fU-MU8">
+                                        <rect key="frame" x="93" y="20" width="189.5" height="145"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Forecast/SunBig" translatesAutoresizingMaskIntoConstraints="NO" id="dbo-IV-fCV">
-                                                <rect key="frame" x="59.5" y="0.0" width="87" height="86"/>
+                                                <rect key="frame" x="51.5" y="0.0" width="87" height="86"/>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pDI-OQ-pNb" userLabel="City Stack View">
-                                                <rect key="frame" x="0.0" y="94" width="205.5" height="18"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pDI-OQ-pNb">
+                                                <rect key="frame" x="0.0" y="94" width="189.5" height="18"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Forecast/CurrentPosition" translatesAutoresizingMaskIntoConstraints="NO" id="KsS-Ep-dfz">
                                                         <rect key="frame" x="0.0" y="3" width="12" height="12"/>
@@ -67,16 +67,16 @@
                                                             <constraint firstAttribute="height" constant="12" id="Sfr-4L-eTx"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently, not availble :(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzI-td-0ar">
-                                                        <rect key="frame" x="16" y="0.0" width="189.5" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check internet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzI-td-0ar">
+                                                        <rect key="frame" x="16" y="0.0" width="173.5" height="18"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
                                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- | -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvi-Rf-Mq6">
-                                                <rect key="frame" x="86" y="120" width="33.5" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvi-Rf-Mq6">
+                                                <rect key="frame" x="92" y="120" width="6" height="25"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="25"/>
                                                 <color key="textColor" red="0.1843137255" green="0.56862745100000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -87,17 +87,13 @@
                                         </constraints>
                                     </stackView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Forecast/Divider" translatesAutoresizingMaskIntoConstraints="NO" id="4gc-7E-cr3">
-                                        <rect key="frame" x="187" y="193" width="1" height="1"/>
+                                        <rect key="frame" x="187" y="224" width="1" height="1"/>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WAG-FJ-AT5" userLabel="Indicators Stack View">
-                                        <rect key="frame" x="8" y="194" width="359" height="172"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="WAG-FJ-AT5">
+                                        <rect key="frame" x="8" y="255" width="359" height="144"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5oC-KG-oq1">
-                                                <rect key="frame" x="59.5" y="0.0" width="240" height="52"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1nF-Ii-8qA">
-                                                <rect key="frame" x="59.5" y="60" width="240" height="52"/>
+                                                <rect key="frame" x="59.5" y="0.0" width="240" height="52"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8ny-mp-qlA">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="52"/>
@@ -114,7 +110,7 @@
                                                                     <constraint firstAttribute="height" constant="20" id="Rzd-mT-1zi"/>
                                                                     <constraint firstAttribute="width" constant="80" id="ZgE-qc-4PC"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -123,7 +119,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JD6-N7-ItC">
                                                         <rect key="frame" x="80" y="0.0" width="80" height="52"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Forecast/indicator3" translatesAutoresizingMaskIntoConstraints="NO" id="diG-zq-6p6">
+                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Forecast/indicator2" translatesAutoresizingMaskIntoConstraints="NO" id="diG-zq-6p6">
                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="M40-U3-yA6"/>
@@ -135,7 +131,7 @@
                                                                     <constraint firstAttribute="width" constant="80" id="4Tk-fm-QdE"/>
                                                                     <constraint firstAttribute="height" constant="20" id="dAP-u3-t2k"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -144,7 +140,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zyk-yx-hFT">
                                                         <rect key="frame" x="160" y="0.0" width="80" height="52"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Forecast/indicator4" translatesAutoresizingMaskIntoConstraints="NO" id="gwe-UJ-3Mr">
+                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Forecast/indicator3" translatesAutoresizingMaskIntoConstraints="NO" id="gwe-UJ-3Mr">
                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="QpO-QF-QFX"/>
@@ -156,7 +152,7 @@
                                                                     <constraint firstAttribute="height" constant="20" id="2Y7-vy-gih"/>
                                                                     <constraint firstAttribute="width" constant="80" id="FEO-hk-pHt"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -164,17 +160,60 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Jc-YU-79o">
-                                                <rect key="frame" x="59.5" y="120" width="240" height="52"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPZ-2j-FQ8">
+                                                <rect key="frame" x="99.5" y="92" width="160" height="52"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5IA-in-35b">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="52"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Forecast/indicator4" translatesAutoresizingMaskIntoConstraints="NO" id="wij-on-Dc9">
+                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="22"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="22" id="I03-vf-6PR"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tN-QR-1jT">
+                                                                <rect key="frame" x="0.0" y="32" width="80" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="80" id="Qzd-4j-ZG6"/>
+                                                                    <constraint firstAttribute="height" constant="20" id="c8X-bc-r9L"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Aqf-LC-iuk">
+                                                        <rect key="frame" x="80" y="0.0" width="80" height="52"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Forecast/indicator5" translatesAutoresizingMaskIntoConstraints="NO" id="31t-sm-H6A">
+                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="22"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="22" id="FGq-A4-KIX"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b95-q6-Yo6">
+                                                                <rect key="frame" x="0.0" y="32" width="80" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="80" id="8xT-qJ-Rlo"/>
+                                                                    <constraint firstAttribute="height" constant="20" id="TAg-23-8a2"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Forecast/Divider" translatesAutoresizingMaskIntoConstraints="NO" id="nPK-Um-hAS">
-                                        <rect key="frame" x="187" y="382" width="1" height="1"/>
+                                        <rect key="frame" x="187" y="419" width="1" height="1"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6l6-u0-U23">
-                                        <rect key="frame" x="133" y="494" width="109" height="30"/>
+                                        <rect key="frame" x="133" y="504" width="109" height="30"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
                                         <state key="normal" title="Share">
                                             <color key="titleColor" red="1" green="0.53333333329999999" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -187,18 +226,18 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="nPK-Um-hAS" firstAttribute="centerX" secondItem="Ftf-Wq-0KI" secondAttribute="centerX" id="17e-kx-zby"/>
+                                    <constraint firstItem="nPK-Um-hAS" firstAttribute="top" secondItem="WAG-FJ-AT5" secondAttribute="bottom" constant="20" id="3aq-dF-Bh2"/>
                                     <constraint firstItem="4gc-7E-cr3" firstAttribute="centerX" secondItem="Ftf-Wq-0KI" secondAttribute="centerX" id="CJN-cZ-Qnu"/>
                                     <constraint firstAttribute="trailing" secondItem="6l6-u0-U23" secondAttribute="trailing" constant="133" id="IAI-FF-M5M"/>
-                                    <constraint firstItem="WAG-FJ-AT5" firstAttribute="top" secondItem="4gc-7E-cr3" secondAttribute="bottom" id="Ngj-d0-1xL"/>
-                                    <constraint firstAttribute="bottom" secondItem="6l6-u0-U23" secondAttribute="bottom" constant="30" id="NrX-1h-h5n"/>
-                                    <constraint firstItem="At9-fU-MU8" firstAttribute="top" secondItem="Ftf-Wq-0KI" secondAttribute="top" constant="32" id="Q1C-eM-KfG"/>
+                                    <constraint firstAttribute="bottom" secondItem="6l6-u0-U23" secondAttribute="bottom" constant="20" id="NrX-1h-h5n"/>
+                                    <constraint firstItem="At9-fU-MU8" firstAttribute="top" secondItem="Ftf-Wq-0KI" secondAttribute="top" constant="20" id="Q1C-eM-KfG"/>
                                     <constraint firstItem="At9-fU-MU8" firstAttribute="centerX" secondItem="Ftf-Wq-0KI" secondAttribute="centerX" id="S95-w0-y22"/>
-                                    <constraint firstItem="4gc-7E-cr3" firstAttribute="top" secondItem="At9-fU-MU8" secondAttribute="bottom" constant="16" id="SEN-7r-6A3"/>
                                     <constraint firstItem="6l6-u0-U23" firstAttribute="centerX" secondItem="Ftf-Wq-0KI" secondAttribute="centerX" id="Zj7-76-CNc"/>
                                     <constraint firstItem="WAG-FJ-AT5" firstAttribute="leading" secondItem="Ftf-Wq-0KI" secondAttribute="leadingMargin" id="cHn-1Q-3jQ"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="WAG-FJ-AT5" secondAttribute="trailing" id="eqB-SU-tM6"/>
+                                    <constraint firstItem="WAG-FJ-AT5" firstAttribute="top" secondItem="4gc-7E-cr3" secondAttribute="bottom" constant="30" id="jDK-gl-04B"/>
                                     <constraint firstItem="6l6-u0-U23" firstAttribute="leading" secondItem="Ftf-Wq-0KI" secondAttribute="leading" constant="133" id="kh3-d7-Qa7"/>
-                                    <constraint firstAttribute="bottom" secondItem="nPK-Um-hAS" secondAttribute="bottom" constant="171" id="vtT-s4-72Z"/>
+                                    <constraint firstItem="WAG-FJ-AT5" firstAttribute="centerY" secondItem="Ftf-Wq-0KI" secondAttribute="centerY" constant="50" id="qz3-yU-KAM"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -214,11 +253,13 @@
                     <navigationItem key="navigationItem" title="Today" id="Olc-F2-fc8"/>
                     <connections>
                         <outlet property="imageWeather" destination="dbo-IV-fCV" id="tez-Jn-H29"/>
-                        <outlet property="labelDegree" destination="zlp-5s-6Vk" id="r0C-LD-Bfh"/>
+                        <outlet property="labelDegree" destination="D02-jO-LEf" id="CXp-0i-Pyi"/>
                         <outlet property="labelDescription" destination="gvi-Rf-Mq6" id="TH0-Pf-xdc"/>
+                        <outlet property="labelDirection" destination="b95-q6-Yo6" id="nYC-3r-i5T"/>
                         <outlet property="labelHumidity" destination="PoL-s7-QHO" id="6Ch-4c-n8f"/>
                         <outlet property="labelLocation" destination="tzI-td-0ar" id="iVz-Hh-wlM"/>
-                        <outlet property="labelSpeed" destination="D02-jO-LEf" id="tbM-t3-geY"/>
+                        <outlet property="labelNem" destination="zlp-5s-6Vk" id="0Zc-N4-chz"/>
+                        <outlet property="labelSpeed" destination="3tN-QR-1jT" id="kzM-X8-wNB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aam-Ge-8BL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -231,8 +272,10 @@
         <image name="Forecast/Divider" width="1" height="1"/>
         <image name="Forecast/SunBig" width="87" height="86"/>
         <image name="Forecast/indicator1" width="22" height="22"/>
+        <image name="Forecast/indicator2" width="16" height="19"/>
         <image name="Forecast/indicator3" width="21" height="15"/>
         <image name="Forecast/indicator4" width="25" height="16"/>
+        <image name="Forecast/indicator5" width="17" height="17"/>
         <image name="TabMenu/TabToday" width="24" height="24"/>
         <image name="TabMenu/TabTodaySelected" width="24" height="24"/>
     </resources>

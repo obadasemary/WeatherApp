@@ -25,7 +25,9 @@ class TodayController: UIViewController, StoreSubscriber {
     @IBOutlet var labelHumidity: UILabel!
     @IBOutlet var labelDegree: UILabel!
     @IBOutlet var labelSpeed: UILabel!
-
+    @IBOutlet var labelDirection: UILabel!
+    @IBOutlet var labelNem: UILabel!
+    
     var isFirstLaunch = true
 
     func newState(state: Changeable<AppState>) {
@@ -74,9 +76,18 @@ class TodayController: UIViewController, StoreSubscriber {
         let desc = todayList["weather"][0]["description"].stringValue
         labelDescription.text = "\(degree)\("°C") | \(desc)"
 
-        labelHumidity.text = todayList["main"]["humidity"].stringValue
-        labelSpeed.text = todayList["wind"]["speed"].stringValue
-        labelDegree.text = degree
+        labelHumidity.text = "\(todayList["main"]["humidity"].stringValue)\("%")"
+        labelSpeed.text = "\(todayList["wind"]["speed"].intValue) \("km\\h")"
+        labelDegree.text = "\(todayList["main"]["pressure"].intValue) \("hPa")"
+
+        labelDirection.text = windDirectionFromDegrees(degrees: todayList["wind"]["deg"].floatValue)
+        labelNem.text = "\(todayList["clouds"]["all"].intValue) \("mm")"
+    }
+
+    func windDirectionFromDegrees(degrees : Float) -> String {
+        let directions = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]
+        let i: Int = Int((degrees + 11.25)/22.5)
+        return directions[i % 16]
     }
 
     func fahrenheit(celsius: Float) -> Float {

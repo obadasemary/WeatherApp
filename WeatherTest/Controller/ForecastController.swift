@@ -28,6 +28,10 @@ class ForecastController: UITableViewController, StoreSubscriber {
     func newState(state: Changeable<AppState>) {
         value = state.value
 
+        if state.lastChanges.contains(\AppState.todayList)  || isFirstLaunch {
+            title = state.value.todayList["name"].stringValue
+        }
+
         if state.lastChanges.contains(\AppState.forecastList) {
             items = state.value.forecastList
 
