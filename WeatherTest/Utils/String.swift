@@ -54,6 +54,19 @@ public extension String {
         return filterName
     }
 
+    func hourOfDay(s: String) -> String {
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+        let filterDate = dateFormatter.date(from: s)
+        dateFormatter.dateFormat = "HH:mm"
+
+        let filterName = dateFormatter.string(from: filterDate!)
+
+        return filterName
+    }
+
     /// SwifterSwift: String decoded from base64 (if applicable).
     ///
     ///        "SGVsbG8gV29ybGQh".base64Decoded = Optional("Hello World!")

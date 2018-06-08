@@ -22,19 +22,12 @@ class ForecastCell: UITableViewCell {
             imageWeather.image = UIImage(named: "Forecast/\(mainImage)")
             labelWeather.text = data["weather"][0]["main"].stringValue
 
-            let dayFormatter = DateFormatter()
-            dayFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-
-            let yourDate = dayFormatter.date(from: data["dt_txt"].stringValue)
-            let hourFormatter = DateFormatter()
-            hourFormatter.dateFormat = "HH:mm"
-
-            let hourName = hourFormatter.string(from: yourDate!)
-            labelDay.text = hourName
+            let title: String = ""
+            labelDay.text = title.hourOfDay(s: data["dt_txt"].stringValue)
 
             let celsius = self.fahrenheit(celsius: data["main"]["humidity"].floatValue)
             let celciusValue = "\(celsius)".intValue
-            labelDegree.text = "\(celciusValue) \("°C")"
+            labelDegree.text = "\(celciusValue)\("°")"
         }
     }
 
