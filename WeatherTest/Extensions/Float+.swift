@@ -15,7 +15,8 @@ extension Float {
         return directions[i % 16]
     }
 
-    func fahrenheit() -> Float {
-        return (self - 32) * 0.5556
+    func celsius() -> Float {
+        return  self - 273.15
+//        return (self - 32) * 0.5556
     }
 }

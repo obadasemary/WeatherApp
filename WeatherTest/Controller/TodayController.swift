@@ -77,7 +77,7 @@ class TodayController: UIViewController, StoreSubscriber {
         imageWeather.image = UIImage(named: "Forecast/\(mainImage)")
         labelLocation.text = todayList["name"].stringValue
 
-        let degree = "\("\(todayList["main"]["humidity"].floatValue.fahrenheit())".intValue)"
+        let degree = "\("\(todayList["main"]["temp"].floatValue.celsius())".intValue)"
         let desc = todayList["weather"][0]["description"].stringValue
         labelDescription.text = "\(degree)\("°C") | \(desc)"
 

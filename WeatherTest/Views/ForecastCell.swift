@@ -24,7 +24,7 @@ class ForecastCell: UITableViewCell {
 
             labelDay.text = data["dt_txt"].stringValue.hourOfDay()
 
-            let celsius = data["main"]["humidity"].floatValue.fahrenheit()
+            let celsius = data["main"]["temp"].floatValue.celsius()
             let celciusValue = "\(celsius)".intValue
             labelDegree.text = "\(celciusValue)\("°")"
         }
