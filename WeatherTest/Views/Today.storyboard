@@ -54,7 +54,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="At9-fU-MU8">
                                         <rect key="frame" x="93" y="20" width="189.5" height="145"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Forecast/SunBig" translatesAutoresizingMaskIntoConstraints="NO" id="dbo-IV-fCV">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dbo-IV-fCV">
                                                 <rect key="frame" x="51.5" y="0.0" width="87" height="86"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pDI-OQ-pNb">
@@ -270,7 +270,6 @@
     <resources>
         <image name="Forecast/CurrentPosition" width="11" height="11"/>
         <image name="Forecast/Divider" width="1" height="1"/>
-        <image name="Forecast/SunBig" width="87" height="86"/>
         <image name="Forecast/indicator1" width="22" height="22"/>
         <image name="Forecast/indicator2" width="16" height="19"/>
         <image name="Forecast/indicator3" width="21" height="15"/>

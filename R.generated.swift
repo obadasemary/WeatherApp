@@ -376,6 +376,7 @@ struct _R: Rswift.Validatable {
       try mainTab.validate()
       try today.validate()
       try forecast.validate()
+      try launchScreen.validate()
     }
     
     struct forecast: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -392,11 +393,15 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
+    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UIViewController
       
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "Forecast/SunBig") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Forecast/SunBig' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+      }
       
       fileprivate init() {}
     }
@@ -428,7 +433,6 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Forecast/Divider") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Forecast/Divider' is used in storyboard 'Today', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Forecast/indicator2") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Forecast/indicator2' is used in storyboard 'Today', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Forecast/SunBig") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Forecast/SunBig' is used in storyboard 'Today', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TabMenu/TabToday") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TabMenu/TabToday' is used in storyboard 'Today', but couldn't be loaded.") }
         if UIKit.UIImage(named: "TabMenu/TabTodaySelected") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'TabMenu/TabTodaySelected' is used in storyboard 'Today', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Forecast/indicator5") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Forecast/indicator5' is used in storyboard 'Today', but couldn't be loaded.") }
