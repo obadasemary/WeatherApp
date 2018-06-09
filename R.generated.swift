@@ -135,7 +135,7 @@ struct R: Rswift.Validatable {
   
   /// This `R.image` struct is generated, and contains static references to 0 images.
   struct image {
-    /// This `R.image.forecast` struct is generated, and contains static references to 16 images.
+    /// This `R.image.forecast` struct is generated, and contains static references to 34 images.
     struct forecast {
       /// Image `CloudyBig`.
       static let cloudyBig = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/CloudyBig")
@@ -159,6 +159,18 @@ struct R: Rswift.Validatable {
       static let wIndBig = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/WIndBig")
       /// Image `Wind`.
       static let wind = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/Wind")
+      /// Image `broken_clouds_day`.
+      static let broken_clouds_day = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/broken_clouds_day")
+      /// Image `broken_clouds_night`.
+      static let broken_clouds_night = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/broken_clouds_night")
+      /// Image `clear_sky_day`.
+      static let clear_sky_day = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/clear_sky_day")
+      /// Image `clear_sky_night`.
+      static let clear_sky_night = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/clear_sky_night")
+      /// Image `few_clouds_day`.
+      static let few_clouds_day = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/few_clouds_day")
+      /// Image `few_clouds_night`.
+      static let few_clouds_night = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/few_clouds_night")
       /// Image `indicator1`.
       static let indicator1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/indicator1")
       /// Image `indicator2`.
@@ -169,6 +181,30 @@ struct R: Rswift.Validatable {
       static let indicator4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/indicator4")
       /// Image `indicator5`.
       static let indicator5 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/indicator5")
+      /// Image `mist_day`.
+      static let mist_day = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/mist_day")
+      /// Image `mist_night`.
+      static let mist_night = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/mist_night")
+      /// Image `rain_day`.
+      static let rain_day = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/rain_day")
+      /// Image `rain_night`.
+      static let rain_night = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/rain_night")
+      /// Image `scattered_clouds_day`.
+      static let scattered_clouds_day = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/scattered_clouds_day")
+      /// Image `scattered_clouds_night`.
+      static let scattered_clouds_night = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/scattered_clouds_night")
+      /// Image `shower_rain_day`.
+      static let shower_rain_day = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/shower_rain_day")
+      /// Image `shower_rain_night`.
+      static let shower_rain_night = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/shower_rain_night")
+      /// Image `snow_day`.
+      static let snow_day = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/snow_day")
+      /// Image `snow_night`.
+      static let snow_night = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/snow_night")
+      /// Image `thunderstorm_day`.
+      static let thunderstorm_day = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/thunderstorm_day")
+      /// Image `thunderstorm_night`.
+      static let thunderstorm_night = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/thunderstorm_night")
       
       /// `UIImage(named: "Cloudy", bundle: ..., traitCollection: ...)`
       static func cloudy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -225,6 +261,36 @@ struct R: Rswift.Validatable {
         return UIKit.UIImage(resource: R.image.forecast.wind, compatibleWith: traitCollection)
       }
       
+      /// `UIImage(named: "broken_clouds_day", bundle: ..., traitCollection: ...)`
+      static func broken_clouds_day(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.broken_clouds_day, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "broken_clouds_night", bundle: ..., traitCollection: ...)`
+      static func broken_clouds_night(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.broken_clouds_night, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "clear_sky_day", bundle: ..., traitCollection: ...)`
+      static func clear_sky_day(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.clear_sky_day, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "clear_sky_night", bundle: ..., traitCollection: ...)`
+      static func clear_sky_night(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.clear_sky_night, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "few_clouds_day", bundle: ..., traitCollection: ...)`
+      static func few_clouds_day(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.few_clouds_day, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "few_clouds_night", bundle: ..., traitCollection: ...)`
+      static func few_clouds_night(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.few_clouds_night, compatibleWith: traitCollection)
+      }
+      
       /// `UIImage(named: "indicator1", bundle: ..., traitCollection: ...)`
       static func indicator1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.forecast.indicator1, compatibleWith: traitCollection)
@@ -248,6 +314,66 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "indicator5", bundle: ..., traitCollection: ...)`
       static func indicator5(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.forecast.indicator5, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "mist_day", bundle: ..., traitCollection: ...)`
+      static func mist_day(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.mist_day, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "mist_night", bundle: ..., traitCollection: ...)`
+      static func mist_night(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.mist_night, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "rain_day", bundle: ..., traitCollection: ...)`
+      static func rain_day(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.rain_day, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "rain_night", bundle: ..., traitCollection: ...)`
+      static func rain_night(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.rain_night, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "scattered_clouds_day", bundle: ..., traitCollection: ...)`
+      static func scattered_clouds_day(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.scattered_clouds_day, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "scattered_clouds_night", bundle: ..., traitCollection: ...)`
+      static func scattered_clouds_night(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.scattered_clouds_night, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "shower_rain_day", bundle: ..., traitCollection: ...)`
+      static func shower_rain_day(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.shower_rain_day, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "shower_rain_night", bundle: ..., traitCollection: ...)`
+      static func shower_rain_night(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.shower_rain_night, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "snow_day", bundle: ..., traitCollection: ...)`
+      static func snow_day(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.snow_day, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "snow_night", bundle: ..., traitCollection: ...)`
+      static func snow_night(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.snow_night, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "thunderstorm_day", bundle: ..., traitCollection: ...)`
+      static func thunderstorm_day(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.thunderstorm_day, compatibleWith: traitCollection)
+      }
+      
+      /// `UIImage(named: "thunderstorm_night", bundle: ..., traitCollection: ...)`
+      static func thunderstorm_night(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.forecast.thunderstorm_night, compatibleWith: traitCollection)
       }
       
       fileprivate init() {}

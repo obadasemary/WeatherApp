@@ -341,11 +341,8 @@
 		058BAF1520C8CA65008C63C9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				05AEDDD820CC90B100A1E4FD /* Font */,
 				05634CAC20C8700300FC3E21 /* Assets.xcassets */,
-				058BAF1720C8CA8F008C63C9 /* ProximaNova-Bold.otf */,
-				058BAF1920C8CA8F008C63C9 /* ProximaNova-Light.otf */,
-				058BAF1620C8CA8E008C63C9 /* ProximaNova-Regular.otf */,
-				058BAF1820C8CA8F008C63C9 /* ProximaNova-Semibold.otf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -359,6 +356,17 @@
 				058BAF2B20C96B40008C63C9 /* forecast.json */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		05AEDDD820CC90B100A1E4FD /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				058BAF1720C8CA8F008C63C9 /* ProximaNova-Bold.otf */,
+				058BAF1920C8CA8F008C63C9 /* ProximaNova-Light.otf */,
+				058BAF1620C8CA8E008C63C9 /* ProximaNova-Regular.otf */,
+				058BAF1820C8CA8F008C63C9 /* ProximaNova-Semibold.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		05BA02F920CABBA700BCEDDA /* Extensions */ = {
@@ -903,7 +911,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5WKLJW5KB8;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WeatherTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -923,7 +931,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5WKLJW5KB8;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WeatherTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

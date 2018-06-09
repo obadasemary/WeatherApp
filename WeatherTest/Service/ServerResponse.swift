@@ -86,18 +86,83 @@ class ServerResponse: Equatable, Action {
 
 extension AppState {
     static func getMainRespose(desc: String) -> String {
-        switch desc.uppercased() {
-        case "CLOUDS":
-            return "Cloudy"
-
-        case "RAIN", "Thunderstorm":
-            return "Lightning"
-
-        case "WIND":
-            return "Wind"
-
+        switch desc {
+        case "clear sky":
+            return "clear_sky"
+        case "few clouds":
+            return "few_clouds"
+        case "scattered clouds":
+            return "scattered_clouds"
+        case "broken clouds":
+            return "broken_clouds"
+        case "overcast clouds":
+            return "broken_clouds"
+        case "shower rain":
+            return "shower_rain"
+        case "rain":
+            return "rain"
+        case "light rain":
+            return "rain"
+        case "moderate rain":
+            return "rain"
+        case "heavy intensity rain":
+            return "rain"
+        case "very heavy rain":
+            return "rain"
+        case "extreme rain":
+            return "rain"
+        case "freezing rain":
+            return "rain"
+        case "light intensity shower rain":
+            return "shower_rain"
+        case "heavy intensity shower rain":
+            return "shower_rain"
+        case "ragged shower rain":
+            return "shower_rain"
+        case "thunderstorm with light rain":
+            return "thunderstorm"
+        case "thunderstorm with rain":
+            return "thunderstorm"
+        case "thunderstorm with heavy rain":
+            return "thunderstorm"
+        case "thunderstorm":
+            return "thunderstorm"
+        case "light thunderstorm":
+            return "thunderstorm"
+        case "heavy thunderstorm":
+            return "thunderstorm"
+        case "ragged thunderstorm":
+            return "thunderstorm"
+        case "thunderstorm with light drizzle":
+            return "thunderstorm"
+        case "thunderstorm with drizzle":
+            return "thunderstorm"
+        case "thunderstorm with heavy drizzle":
+            return "thunderstorm"
+        case "light snow":
+            return "snow"
+        case "snow":
+            return "snow"
+        case "heavy snow":
+            return "snow"
+        case "sleet":
+            return "snow"
+        case "shower sleet":
+            return "snow"
+        case "light rain and snow":
+            return "snow"
+        case "rain and snow":
+            return "snow"
+        case "light shower snow":
+            return "snow"
+        case "shower snow":
+            return "snow"
+        case "heavy shower snow":
+            return "snow"
+        case "mist":
+            return "mist"
         default:
-            return "Sun"
+            return "mist"
         }
     }
 }

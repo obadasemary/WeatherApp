@@ -73,8 +73,15 @@ class TodayController: UIViewController, StoreSubscriber {
 
     // MARK: - StackView
     func setStackView() {
-        let mainImage: String = AppState.getMainRespose(desc: todayList["weather"][0]["main"].stringValue)
-        imageWeather.image = UIImage(named: "Forecast/\(mainImage)")
+        let mainImage: String = AppState.getMainRespose(desc: todayList["weather"][0]["description"].stringValue)
+
+        let hour = Calendar.current.component(.hour, from: Date())
+        if hour >= 6 && hour < 17 {
+            imageWeather.image = UIImage(named: "Forecast/\(mainImage)\("_day")")
+        } else {
+            imageWeather.image = UIImage(named: "Forecast/\(mainImage)\("_night")")
+        }
+
         labelLocation.text = todayList["name"].stringValue
 
         let degree = "\("\(todayList["main"]["temp"].floatValue.celsius())".intValue)"

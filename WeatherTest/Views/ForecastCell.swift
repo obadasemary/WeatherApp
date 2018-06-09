@@ -18,10 +18,17 @@ class ForecastCell: UITableViewCell {
 
     var data: JSON = [] {
         didSet {
-            let mainImage: String = AppState.getMainRespose(desc: data["weather"][0]["main"].stringValue)
-            imageWeather.image = UIImage(named: "Forecast/\(mainImage)")
-            labelWeather.text = data["weather"][0]["main"].stringValue
 
+            let mainImage: String = AppState.getMainRespose(desc: data["weather"][0]["description"].stringValue)
+
+            let hour = Calendar.current.component(.hour, from: Date())
+            if hour >= 6 && hour < 17 {
+                imageWeather.image = UIImage(named: "Forecast/\(mainImage)\("_day")")
+            } else {
+                imageWeather.image = UIImage(named: "Forecast/\(mainImage)\("_night")")
+            }
+
+            labelWeather.text = data["weather"][0]["main"].stringValue
             labelDay.text = data["dt_txt"].stringValue.hourOfDay()
 
             let celsius = data["main"]["temp"].floatValue.celsius()
