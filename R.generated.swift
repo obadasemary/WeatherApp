@@ -135,30 +135,14 @@ struct R: Rswift.Validatable {
   
   /// This `R.image` struct is generated, and contains static references to 0 images.
   struct image {
-    /// This `R.image.forecast` struct is generated, and contains static references to 34 images.
+    /// This `R.image.forecast` struct is generated, and contains static references to 26 images.
     struct forecast {
-      /// Image `CloudyBig`.
-      static let cloudyBig = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/CloudyBig")
-      /// Image `Cloudy`.
-      static let cloudy = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/Cloudy")
       /// Image `CurrentPosition`.
       static let currentPosition = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/CurrentPosition")
       /// Image `Divider`.
       static let divider = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/Divider")
-      /// Image `LightningBig`.
-      static let lightningBig = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/LightningBig")
-      /// Image `Lightning`.
-      static let lightning = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/Lightning")
       /// Image `LineRainbow`.
       static let lineRainbow = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/LineRainbow")
-      /// Image `SunBig`.
-      static let sunBig = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/SunBig")
-      /// Image `Sun`.
-      static let sun = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/Sun")
-      /// Image `WIndBig`.
-      static let wIndBig = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/WIndBig")
-      /// Image `Wind`.
-      static let wind = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/Wind")
       /// Image `broken_clouds_day`.
       static let broken_clouds_day = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/broken_clouds_day")
       /// Image `broken_clouds_night`.
@@ -206,16 +190,6 @@ struct R: Rswift.Validatable {
       /// Image `thunderstorm_night`.
       static let thunderstorm_night = Rswift.ImageResource(bundle: R.hostingBundle, name: "Forecast/thunderstorm_night")
       
-      /// `UIImage(named: "Cloudy", bundle: ..., traitCollection: ...)`
-      static func cloudy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.forecast.cloudy, compatibleWith: traitCollection)
-      }
-      
-      /// `UIImage(named: "CloudyBig", bundle: ..., traitCollection: ...)`
-      static func cloudyBig(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.forecast.cloudyBig, compatibleWith: traitCollection)
-      }
-      
       /// `UIImage(named: "CurrentPosition", bundle: ..., traitCollection: ...)`
       static func currentPosition(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.forecast.currentPosition, compatibleWith: traitCollection)
@@ -226,39 +200,9 @@ struct R: Rswift.Validatable {
         return UIKit.UIImage(resource: R.image.forecast.divider, compatibleWith: traitCollection)
       }
       
-      /// `UIImage(named: "Lightning", bundle: ..., traitCollection: ...)`
-      static func lightning(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.forecast.lightning, compatibleWith: traitCollection)
-      }
-      
-      /// `UIImage(named: "LightningBig", bundle: ..., traitCollection: ...)`
-      static func lightningBig(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.forecast.lightningBig, compatibleWith: traitCollection)
-      }
-      
       /// `UIImage(named: "LineRainbow", bundle: ..., traitCollection: ...)`
       static func lineRainbow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.forecast.lineRainbow, compatibleWith: traitCollection)
-      }
-      
-      /// `UIImage(named: "Sun", bundle: ..., traitCollection: ...)`
-      static func sun(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.forecast.sun, compatibleWith: traitCollection)
-      }
-      
-      /// `UIImage(named: "SunBig", bundle: ..., traitCollection: ...)`
-      static func sunBig(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.forecast.sunBig, compatibleWith: traitCollection)
-      }
-      
-      /// `UIImage(named: "WIndBig", bundle: ..., traitCollection: ...)`
-      static func wIndBig(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.forecast.wIndBig, compatibleWith: traitCollection)
-      }
-      
-      /// `UIImage(named: "Wind", bundle: ..., traitCollection: ...)`
-      static func wind(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.forecast.wind, compatibleWith: traitCollection)
       }
       
       /// `UIImage(named: "broken_clouds_day", bundle: ..., traitCollection: ...)`
@@ -526,7 +470,7 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
       
       static func validate() throws {
-        if UIKit.UIImage(named: "Forecast/SunBig") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Forecast/SunBig' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Forecast/clear_sky_day") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Forecast/clear_sky_day' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
       }
       
       fileprivate init() {}
