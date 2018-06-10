@@ -11,6 +11,7 @@ import UIKit
 extension UIViewController {
     func showMessage(_ title: String = "", _ message: String = "", _ timeout: Double = 3) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        self.present(alertController, animated: true, completion: nil)
         perform_after(timeout) {
             alertController.dismiss(animated: true, completion: nil)
         }

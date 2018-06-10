@@ -66,7 +66,8 @@ class TodayController: UIViewController, StoreSubscriber {
                 let langitude: Double = state.value.locationCount[1].doubleValue
                 Redux.store.dispatch(AppState.getToday(lat: latidute, long: langitude))
             } else {
-                self.showMessage("Error!", "Unable to Share Location", 0)
+                SwiftSpinner.hide()
+                self.showMessage("Error!", "Please check your allow location access", 3)
             }
         }
 
