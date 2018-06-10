@@ -27,9 +27,9 @@ class LocationHelper: NSObject, CLLocationManagerDelegate {
     class func updateLocation() {
         if LocationHelper.instance == nil {
             LocationHelper.instance = LocationHelper()
-            LocationHelper.instance?.locationManager.delegate = instance
-            LocationHelper.instance?.locationManager.startUpdatingLocation()
         }
+        LocationHelper.instance?.locationManager.delegate = instance
+        LocationHelper.instance?.locationManager.startUpdatingLocation()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

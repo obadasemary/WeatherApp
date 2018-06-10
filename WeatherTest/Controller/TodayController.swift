@@ -60,7 +60,7 @@ class TodayController: UIViewController, StoreSubscriber {
         }
 
         // Showing location latidute and langitude
-        if state.lastChanges.contains(\AppState.locationCount) || isFirstLaunch {
+        if state.lastChanges.contains(\AppState.locationCount) {
             if state.value.locationCount != [] {
                 let latidute: Double = state.value.locationCount[0].doubleValue
                 let langitude: Double = state.value.locationCount[1].doubleValue

@@ -15,7 +15,8 @@ class ForecastCell: UITableViewCell {
     @IBOutlet var labelDay: UILabel!
     @IBOutlet var labelDegree: UILabel!
     @IBOutlet var labelWeather: UILabel!
-
+    @IBOutlet var lineLeadingConstraint: NSLayoutConstraint!
+    
     var data: JSON = [] {
         didSet {
 

@@ -55,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, StoreSubscriber {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+        LocationHelper.updateLocation()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
