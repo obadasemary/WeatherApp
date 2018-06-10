@@ -125,7 +125,7 @@ class ForecastController: UITableViewController, StoreSubscriber {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.forecastCell, for: indexPath)!
         cell.data = dayGroupItems[indexPath.section][indexPath.row]
-
+        cell.lineLeadingConstraint.constant = 95
         if  indexPath.row == 0   {
             cell.lineLeadingConstraint.constant = 0
         }
