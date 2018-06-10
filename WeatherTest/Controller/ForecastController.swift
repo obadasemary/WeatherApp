@@ -62,6 +62,7 @@ class ForecastController: UITableViewController, StoreSubscriber {
 
         /// Using Forecast data
         if state.lastChanges.contains(\AppState.forecastList) {
+            removeList()
             items = state.value.forecastList
 
             var saveDay: String = ""
@@ -148,5 +149,12 @@ class ForecastController: UITableViewController, StoreSubscriber {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    func removeList() {
+        items.removeAll()
+        dayGroupItems.removeAll()
+        dayGroupItem.removeAll()
+        dayTitleItems.removeAll()
     }
 }
