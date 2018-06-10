@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "68D2082CC1652842E8A369D9549D3B3A"
-               BlueprintName = "Pods-WeatherTest"
+               BlueprintIdentifier = "C578947D16EC6CCFE1CAD5D3784C8B8D"
+               BlueprintName = "SwiftSpinner"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-WeatherTest.a">
+               BuildableName = "libSwiftSpinner.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

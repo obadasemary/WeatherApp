@@ -15,7 +15,6 @@ class LocationHelper: NSObject, CLLocationManagerDelegate {
     private static var instance: LocationHelper?
     private let locationManager: CLLocationManager!
 
-
     override init() {
         locationManager = CLLocationManager()
         locationManager.requestAlwaysAuthorization()

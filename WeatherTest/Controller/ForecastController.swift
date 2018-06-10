@@ -12,6 +12,7 @@ import ReSwift
 import SwiftyJSON
 import Changeable
 import PullToRefreshKit
+import SwiftSpinner
 
 class ForecastController: UITableViewController, StoreSubscriber {
 
@@ -33,6 +34,7 @@ class ForecastController: UITableViewController, StoreSubscriber {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.shadowImage = R.image.forecast.lineRainbow()
+        SwiftSpinner.show("Connecting to weather forecast...")
 
         Redux.store.subscribe(self) {
             $0.select { (state: Changeable<AppState>) -> Changeable<AppState> in
@@ -76,7 +78,6 @@ class ForecastController: UITableViewController, StoreSubscriber {
 
         /// Using Location latidute & langitude
         if state.lastChanges.contains(\AppState.locationCount) || isFirstLaunch {
-
             if state.value.locationCount != [] {
                 let latidute: Double = state.value.locationCount[0].doubleValue
                 let langitude: Double = state.value.locationCount[1].doubleValue

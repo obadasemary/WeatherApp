@@ -11,6 +11,7 @@ import Foundation
 import Result
 import ReSwift
 import SwiftyJSON
+import SwiftSpinner
 
 extension AppState {
 
@@ -22,12 +23,14 @@ extension AppState {
             todayProvider.request(TodayService.getToday(latitude: lat, longitude: long), completion: { result in
                 switch result {
                 case let .success(response):
-
+                    SwiftSpinner.hide()
+                    
                     let json = response.asJSON()
                     let response = json.asResponse() as TodayResponse
                     return callback({ _, _ in response })
 
                 case let .failure(error):
+                    SwiftSpinner.hide()
                     return callback({ _, _ in error })
                 }
             })

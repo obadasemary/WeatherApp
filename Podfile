@@ -17,6 +17,7 @@ def common_pods
     pod 'Kingfisher'
     pod 'DeepLinkKit'
     pod 'PullToRefreshKit'
+    pod 'SwiftSpinner'
 
 end
 

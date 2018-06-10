@@ -11,6 +11,7 @@ import Rswift
 import ReSwift
 import SwiftyJSON
 import Changeable
+import SwiftSpinner
 
 class TodayController: UIViewController, StoreSubscriber {
 
@@ -33,6 +34,7 @@ class TodayController: UIViewController, StoreSubscriber {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.shadowImage = R.image.forecast.lineRainbow()
+        SwiftSpinner.show("Connecting to weather...")
 
         // We should subscribe for state
         Redux.store.subscribe(self) {
