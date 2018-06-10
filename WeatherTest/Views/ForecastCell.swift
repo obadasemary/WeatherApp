@@ -28,7 +28,7 @@ class ForecastCell: UITableViewCell {
                 imageWeather.image = UIImage(named: "Forecast/\(mainImage)\("_night")")
             }
 
-            labelWeather.text = data["weather"][0]["description"].stringValue
+            labelWeather.text = data["weather"][0]["description"].stringValue.capitalized
             labelDay.text = data["dt_txt"].stringValue.hourOfDay()
 
             let celsius = data["main"]["temp"].floatValue.celsius()

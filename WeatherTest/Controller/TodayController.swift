@@ -87,7 +87,7 @@ class TodayController: UIViewController, StoreSubscriber {
         labelLocation.text = todayList["name"].stringValue
 
         let degree = "\("\(todayList["main"]["temp"].floatValue.celsius())".intValue)"
-        let desc = todayList["weather"][0]["description"].stringValue
+        let desc = todayList["weather"][0]["description"].stringValue.capitalized
         labelDescription.text = "\(degree)\("°C") | \(desc)"
 
         labelHumidity.text = "\(todayList["main"]["humidity"].stringValue)\("%")"
