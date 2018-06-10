@@ -100,7 +100,7 @@ class TodayController: UIViewController, StoreSubscriber {
     }
 
     @IBAction func shareButtonTapped(_ sender: Any) {
-        let message = "My Location Weather/\(String(describing: labelDescription.text))"
+        let message = "\(labelLocation.text!) \("Weather Forecast"): \(String(describing: labelDescription.text!))"
         let objectsToShare = [message] as [Any]
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
