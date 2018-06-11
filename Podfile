@@ -18,6 +18,7 @@ def common_pods
     pod 'DeepLinkKit'
     pod 'PullToRefreshKit'
     pod 'SwiftSpinner'
+    pod 'Solar'
 
 end
 

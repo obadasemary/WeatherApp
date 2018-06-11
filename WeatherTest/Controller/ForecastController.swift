@@ -13,6 +13,8 @@ import SwiftyJSON
 import Changeable
 import PullToRefreshKit
 import SwiftSpinner
+import Solar
+import CoreLocation
 
 class ForecastController: UITableViewController, StoreSubscriber {
 
@@ -25,6 +27,7 @@ class ForecastController: UITableViewController, StoreSubscriber {
     var dayTitleItems: [JSON] = []
 
     var isFirstLaunch = true
+    var solar: Solar!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -82,6 +85,10 @@ class ForecastController: UITableViewController, StoreSubscriber {
             if state.value.locationCount != [] {
                 let latidute: Double = state.value.locationCount[0].doubleValue
                 let langitude: Double = state.value.locationCount[1].doubleValue
+
+                let c2D = CLLocationCoordinate2D(latitude: latidute, longitude: langitude)
+                solar = Solar(for: Date(), coordinate: c2D)!
+
                 Redux.store.dispatch(AppState.getForecast(lat: latidute, long: langitude))
             } else {
                 SwiftSpinner.hide()
@@ -124,6 +131,7 @@ class ForecastController: UITableViewController, StoreSubscriber {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.forecastCell, for: indexPath)!
+        cell.solar = solar
         cell.data = dayGroupItems[indexPath.section][indexPath.row]
         cell.lineLeadingConstraint.constant = 95
         if  indexPath.row == 0   {

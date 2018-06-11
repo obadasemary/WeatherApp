@@ -12,6 +12,8 @@ import ReSwift
 import SwiftyJSON
 import Changeable
 import SwiftSpinner
+import Solar
+import CoreLocation
 
 class TodayController: UIViewController, StoreSubscriber {
 
@@ -28,8 +30,9 @@ class TodayController: UIViewController, StoreSubscriber {
     @IBOutlet var labelSpeed: UILabel!
     @IBOutlet var labelDirection: UILabel!
     @IBOutlet var labelNem: UILabel!
-    
+
     var isFirstLaunch = true
+    var solar: Solar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +67,10 @@ class TodayController: UIViewController, StoreSubscriber {
             if state.value.locationCount != [] {
                 let latidute: Double = state.value.locationCount[0].doubleValue
                 let langitude: Double = state.value.locationCount[1].doubleValue
+
+                let c2D = CLLocationCoordinate2D(latitude: latidute, longitude: langitude)
+                solar = Solar(for: Date(), coordinate: c2D)!
+
                 Redux.store.dispatch(AppState.getToday(lat: latidute, long: langitude))
             } else {
                 SwiftSpinner.hide()
@@ -78,10 +85,9 @@ class TodayController: UIViewController, StoreSubscriber {
     func setStackView() {
         let mainImage: String = AppState.getMainRespose(desc: todayList["weather"][0]["description"].stringValue)
 
-        let hour = Calendar.current.component(.hour, from: Date())
-        if hour >= 6 && hour < 17 {
+        if solar.isDaytime {
             imageWeather.image = UIImage(named: "Forecast/\(mainImage)\("_day")")
-        } else {
+        } else if solar.isNighttime {
             imageWeather.image = UIImage(named: "Forecast/\(mainImage)\("_night")")
         }
 

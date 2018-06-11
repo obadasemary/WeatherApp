@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import Solar
 
 class ForecastCell: UITableViewCell {
 
@@ -16,16 +17,16 @@ class ForecastCell: UITableViewCell {
     @IBOutlet var labelDegree: UILabel!
     @IBOutlet var labelWeather: UILabel!
     @IBOutlet var lineLeadingConstraint: NSLayoutConstraint!
+
+    var solar: Solar!
     
     var data: JSON = [] {
         didSet {
-
             let mainImage: String = AppState.getMainRespose(desc: data["weather"][0]["description"].stringValue)
 
-            let hour = Calendar.current.component(.hour, from: Date())
-            if hour >= 6 && hour < 17 {
+            if solar.isDaytime {
                 imageWeather.image = UIImage(named: "Forecast/\(mainImage)\("_day")")
-            } else {
+            } else if solar.isNighttime {
                 imageWeather.image = UIImage(named: "Forecast/\(mainImage)\("_night")")
             }
 
