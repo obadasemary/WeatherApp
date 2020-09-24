@@ -75,4 +75,4 @@ apikey and api path is defiened in Config/DEBUG.plist
 [WeatherTest]/[Views]/[Forecast.storyboard]
 </pre>
 
-<img src="https://raw.githubusercontent.com/serdarbakirtas/WeatherApp/master/Screenshots/01.png" alt="HTML5 Icon" width="276" height="598"> <img src="https://raw.githubusercontent.com/serdarbakirtas/WeatherApp/master/Screenshots/02.png" alt="HTML5 Icon" width="276" height="598"> <img src="https://raw.githubusercontent.com/serdarbakirtas/WeatherApp/master/Screenshots/03.png" alt="HTML5 Icon" width="276" height="598"> <img src="https://raw.githubusercontent.com/serdarbakirtas/WeatherApp/master/Screenshots/04.png" alt="HTML5 Icon" width="276" height="598">
+<img src="https://github.com/obadasemary/WeatherApp/blob/master/Screenshots/01.png" alt="HTML5 Icon" width="276" height="598"> <img src="https://github.com/obadasemary/WeatherApp/blob/master/Screenshots/02.png" alt="HTML5 Icon" width="276" height="598"> <img src="https://github.com/obadasemary/WeatherApp/blob/master/Screenshots/03.png" alt="HTML5 Icon" width="276" height="598"> <img src="https://github.com/obadasemary/WeatherApp/blob/master/Screenshots/04.png" alt="HTML5 Icon" width="276" height="598">
